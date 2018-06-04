@@ -30,7 +30,7 @@ function onTimer() {
   g.flip();
 }
 
-// Update temperature every 2 seconds
+// Update temperature every 10 seconds
 setInterval(onTimer,10000);
 // Update temperature immediately
 onTimer();
