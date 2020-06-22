@@ -18,6 +18,7 @@ function onTimer() {
   // Get the temperature as a string
   var t = E.getTemperature().toFixed(1);
   var f = ((t * 1.8) + 32).toFixed(1);
+  f = fixEvilTemp(f);
   // Clear display
   g.clear();
   // Use the small font for a title
@@ -30,6 +31,12 @@ function onTimer() {
   g.flip();
 }
 
+function fixEvilTemp(f) {
+  if (f === '66.6') {
+    return '66.7';
+  }
+  return f;
+}
 // Update temperature every 10 seconds
 setInterval(onTimer,10000);
 // Update temperature immediately
